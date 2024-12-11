@@ -1,0 +1,112 @@
+.sliderContainer {
+  padding: 20px;
+  position: relative;
+}
+
+.title {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.movieCardWrapper {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+}
+
+.movieCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 2/3;
+}
+
+.movieImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.movieInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+.movieInfo h3 {
+  margin: 0;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.movieInfo p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* 호버 효과 */
+.movieCardWrapper:hover .movieImage {
+  transform: scale(1.05);
+}
+
+.movieCardWrapper:hover .movieInfo {
+  transform: translateY(0);
+}
+
+/* Swiper 커스텀 스타일 */
+.sliderWrapper {
+  position: relative;
+  padding: 0 40px; /* 네비게이션 버튼을 위한 여백 */
+}
+
+.sliderWrapper:global(.swiper) {
+  height: 350px !important;
+}
+
+.sliderWrapper :global(.swiper-button-prev),
+.sliderWrapper :global(.swiper-button-next) {
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.sliderWrapper :global(.swiper-button-prev:after),
+.sliderWrapper :global(.swiper-button-next:after) {
+  font-size: 20px;
+}
+
+.sliderWrapper :global(.swiper-button-prev) {
+  left: 0;
+}
+
+.sliderWrapper :global(.swiper-button-next) {
+  right: 0;
+}
+
+.sliderWrapper :global(.swiper-pagination) {
+  position: absolute;
+  bottom: 0px !important; /* 위치 조정 */
+  left: 50% !important; /* 가운데 정렬을 위해 */
+  transform: translateX(-50%) !important; /* 가운데 정렬 완성 */
+}
+
+.sliderWrapper :global(.swiper-pagination-bullet) {
+  background: white;
+  opacity: 0.5;
+}
+
+.sliderWrapper :global(.swiper-pagination-bullet-active) {
+  opacity: 1;
+}
