@@ -8,7 +8,11 @@ import OverflowControl from "@/components/OverflowControl";
 const Layout = async ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="ko">
-      <title>Pado</title>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/logo-blue.png" />
+        <title>Pado</title>
+      </head>
       <body>
         <AuthProvider>
           <Header />
